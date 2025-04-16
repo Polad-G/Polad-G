@@ -2,36 +2,63 @@
 
 ### 💻 Full Stack Developer | React | JavaScript | MySQL | HTML | CSS
 
-I'm a passionate Full Stack Developer from Azerbaijan with a strong background in tourism and technology. I enjoy turning ideas into reality through elegant, scalable code and modern web technologies.
+I'm a passionate Full Stack Developer from **Azerbaijan** with a strong background in **tourism and technology**. I love transforming ideas into interactive, scalable, and elegant web applications. Always eager to learn and improve, especially in team-based, collaborative environments.
 
 ---
 
-### 🛠️ Tech Stack
-- JavaScript, React
-- HTML5, CSS3
-- MySQL, Database Management
-- Git, GitHub
-- REST APIs
+### 🛠️ Tech Stack & Tools
+
+- **Frontend:** React, JavaScript (ES6+), HTML5, CSS3, Bootstrap, Tailwind CSS
+- **Backend & Database:** MySQL, Node.js, RESTful APIs
+- **Version Control:** Git & GitHub
+- **Design & Prototyping:** Figma, Adobe XD
+- **Others:** Responsive Web Design, UI/UX Principles, Netlify Deployment
 
 ---
 
-### 📌 Projects
+### 🚀 Featured Projects
 
 🌍 **Information About Countries**  
+A responsive website offering country details like geography, population, flags, and more.  
 🔗 [https://countryinfoi.netlify.app](https://countryinfoi.netlify.app)
 
 🗓️ **How Many Days Have You Lived?**  
+A multilingual calculator that tells you how many days you’ve lived since birth.  
 🔗 [https://manydays.netlify.app](https://manydays.netlify.app)
 
 🎮 **Family Math Game**  
+An interactive math game built for all ages using animations and fun interactions.  
 🔗 [https://manydays.netlify.app](https://manydays.netlify.app)
 
 📦 **GitHub Project Showcase**  
+A collection of public projects that reflect my coding journey and creativity.  
 🔗 [https://github.com/Polad-G](https://github.com/Polad-G)
 
 ---
 
+### 🌟 Skills Summary
+
+- ✅ Strong communication & teamwork
+- ✅ Clean and reusable code structure
+- ✅ Problem-solving and debugging mindset
+- ✅ Passion for UI/UX and detail-oriented development
+
+---
+
+### 📈 GitHub Stats
+
+![Polad's GitHub Stats](https://github-readme-stats.vercel.app/api?username=Polad-G&show_icons=true&theme=tokyonight)  
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Polad-G&layout=compact&theme=tokyonight)
+
+---
+
 ### 📫 Contact Me
-- 📧 qehrahmanlipolad@gmail.com
-- 📱 +994 55 813 24 90
-- 🌐 [Portfolio Website](https://poladgahramanliportfolio.netlify.app)
+
+- 📧 Email: **qehrahmanlipolad@gmail.com**
+- 📱 Phone: **+994 55 813 24 90**
+- 🌍 Portfolio: [poladgahramanliportfolio.netlify.app](https://poladgahramanliportfolio.netlify.app)
+- 📍 Location: **Baku, Azerbaijan**
+
+---
+
+_Always coding, always growing. Let's build something amazing together!_
