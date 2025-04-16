@@ -20,10 +20,6 @@ I'm a passionate Full Stack Developer from **Azerbaijan** with a strong backgrou
 A responsive website offering country details like geography, population, flags, and more.  
 🔗 [https://country-info00.netlify.app](https://country-info00.netlify.app)
 
-🗓️ **How Many Days Have You Lived?**  
-A multilingual calculator that tells you how many days you’ve lived since birth.  
-🔗 [https://manydays.netlify.app](https://manydays.netlify.app)
-
 🎮 **Family Math Game**  
 An interactive math game built for all ages using animations and fun interactions.  
 🔗 [https://imagine-family.netlify.app](https://imagine-family.netlify.app)
