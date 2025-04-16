@@ -1,16 +1,37 @@
-## Hi there 👋
+# 👋 Hi, I'm Polad Gahramanli
 
-<!--
-**Polad-G/Polad-G** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+### 💻 Full Stack Developer | React | JavaScript | MySQL | HTML | CSS
 
-Here are some ideas to get you started:
+I'm a passionate Full Stack Developer from Azerbaijan with a strong background in tourism and technology. I enjoy turning ideas into reality through elegant, scalable code and modern web technologies.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+---
+
+### 🛠️ Tech Stack
+- JavaScript, React
+- HTML5, CSS3
+- MySQL, Database Management
+- Git, GitHub
+- REST APIs
+
+---
+
+### 📌 Projects
+
+🌍 **Information About Countries**  
+🔗 [https://countryinfoi.netlify.app](https://countryinfoi.netlify.app)
+
+🗓️ **How Many Days Have You Lived?**  
+🔗 [https://manydays.netlify.app](https://manydays.netlify.app)
+
+🎮 **Family Math Game**  
+🔗 [https://manydays.netlify.app](https://manydays.netlify.app)
+
+📦 **GitHub Project Showcase**  
+🔗 [https://github.com/Polad-G](https://github.com/Polad-G)
+
+---
+
+### 📫 Contact Me
+- 📧 qehrahmanlipolad@gmail.com
+- 📱 +994 55 813 24 90
+- 🌐 [Portfolio Website](https://poladgahramanliportfolio.netlify.app)
