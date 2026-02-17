@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>195 Ölkə Atlası</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="scene">
+      <section class="panel">
+        <h1>🌍 195 Ölkə Atlası (4D Stil)</h1>
+        <p>
+          Dünyadakı 195 ölkə haqqında geniş məlumat əldə edin. Aşağıya ölkə adını
+          yazın və seçin.
+        </p>
+
+        <label for="country-search">Ölkə axtarışı</label>
+        <input
+          id="country-search"
+          type="text"
+          placeholder="Məsələn: Azerbaijan, Japan, Brazil..."
+          autocomplete="off"
+        />
+        <ul id="results" class="results"></ul>
+      </section>
+
+      <section id="country-card" class="country-card hidden" aria-live="polite">
+        <div class="header">
+          <img id="flag" alt="Ölkə bayrağı" />
+          <div>
+            <h2 id="name"></h2>
+            <p id="official"></p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <p><strong>Paytaxt:</strong> <span id="capital"></span></p>
+          <p><strong>Region:</strong> <span id="region"></span></p>
+          <p><strong>Subregion:</strong> <span id="subregion"></span></p>
+          <p><strong>Əhali:</strong> <span id="population"></span></p>
+          <p><strong>Sahə:</strong> <span id="area"></span></p>
+          <p><strong>Valyuta:</strong> <span id="currency"></span></p>
+          <p><strong>Dillər:</strong> <span id="languages"></span></p>
+          <p><strong>Telefon kodu:</strong> <span id="calling"></span></p>
+          <p><strong>Domen zonası:</strong> <span id="domain"></span></p>
+          <p><strong>Saat qurşağı:</strong> <span id="timezone"></span></p>
+          <p><strong>Sərhəd ölkələri:</strong> <span id="borders"></span></p>
+          <p><strong>Start of week:</strong> <span id="week"></span></p>
+        </div>
+
+        <a id="maps" target="_blank" rel="noopener noreferrer">Xəritədə bax</a>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
