@@ -45,7 +45,10 @@ A collection of public projects that reflect my coding journey and creativity.
 
 - 📧 Email: **qehrahmanlipolad@gmail.com**  
 - 📱 Phone: **+994 55 813 24 90**  
-- 🌍 Portfolio: [https://poladgahramanliportfolio.netlify.app](https://poladgahramanliportfolio.netlify.app)  
+- 🌍 Portfolio: https://poladgahramanliportfoilo.netlify.app/ 
 - 📍 Location: **Baku, Azerbaijan**
 
 ---
+
+
+
