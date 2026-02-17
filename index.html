@@ -11,17 +11,18 @@
       <section class="panel">
         <h1>🌍 195 Ölkə Atlası (4D Stil)</h1>
         <p>
-          Dünyadakı 195 ölkə haqqında geniş məlumat əldə edin. Aşağıya ölkə adını
-          yazın və seçin.
+          Dünyadakı 195 ölkə haqqında geniş məlumat əldə edin. Ölkə adını yazın və
+          nəticədən seçin.
         </p>
 
         <label for="country-search">Ölkə axtarışı</label>
         <input
           id="country-search"
           type="text"
-          placeholder="Məsələn: Azerbaijan, Japan, Brazil..."
+          placeholder="Məsələn: Azerbaijan, Turkey, Japan..."
           autocomplete="off"
         />
+        <small id="status" class="status">Məlumatlar yüklənir...</small>
         <ul id="results" class="results"></ul>
       </section>
 
@@ -46,7 +47,7 @@
           <p><strong>Domen zonası:</strong> <span id="domain"></span></p>
           <p><strong>Saat qurşağı:</strong> <span id="timezone"></span></p>
           <p><strong>Sərhəd ölkələri:</strong> <span id="borders"></span></p>
-          <p><strong>Start of week:</strong> <span id="week"></span></p>
+          <p><strong>Həftə başlanğıcı:</strong> <span id="week"></span></p>
         </div>
 
         <a id="maps" target="_blank" rel="noopener noreferrer">Xəritədə bax</a>

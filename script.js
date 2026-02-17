@@ -1,5 +1,6 @@
 const searchInput = document.getElementById("country-search");
 const resultsList = document.getElementById("results");
+const statusLabel = document.getElementById("status");
 const card = document.getElementById("country-card");
 
 const fields = {
@@ -21,6 +22,11 @@ const fields = {
   maps: document.getElementById("maps"),
 };
 
+const ENDPOINTS = [
+  "https://restcountries.com/v3.1/all",
+  "https://restcountries.francocarballar.com/api/v1/all",
+];
+
 let countries = [];
 
 function formatNumber(value) {
@@ -31,6 +37,33 @@ function listFromObject(obj, fallback = "Məlumat yoxdur") {
   if (!obj) return fallback;
   const values = Object.values(obj);
   return values.length ? values.join(", ") : fallback;
+}
+
+async function fetchWithTimeout(url, timeout = 8000) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeout);
+
+  try {
+    const res = await fetch(url, { signal: controller.signal });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return await res.json();
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+function normalizeData(raw) {
+  const rows = Array.isArray(raw) ? raw : raw?.data || [];
+  const preferredExtras = ["Palestine", "Vatican City"];
+  const core = rows.filter((country) => country.unMember);
+  const extras = rows.filter((country) => preferredExtras.includes(country?.name?.common));
+
+  return [...core, ...extras]
+    .filter((country) => country?.name?.common)
+    .filter(
+      (country, idx, arr) => arr.findIndex((x) => x.name.common === country.name.common) === idx
+    )
+    .sort((a, b) => a.name.common.localeCompare(b.name.common));
 }
 
 function showCountry(country) {
@@ -66,12 +99,21 @@ function showCountry(country) {
 function renderResults(items) {
   resultsList.innerHTML = "";
 
-  items.slice(0, 25).forEach((country) => {
+  if (!items.length) {
+    const li = document.createElement("li");
+    li.textContent = "Nəticə tapılmadı";
+    li.style.opacity = "0.7";
+    li.style.cursor = "default";
+    resultsList.appendChild(li);
+    return;
+  }
+
+  items.slice(0, 30).forEach((country, index) => {
     const li = document.createElement("li");
     li.textContent = country.name.common;
+    if (index === 0) li.classList.add("active");
     li.addEventListener("click", () => {
       searchInput.value = country.name.common;
-      resultsList.innerHTML = "";
       showCountry(country);
     });
     resultsList.appendChild(li);
@@ -79,27 +121,29 @@ function renderResults(items) {
 }
 
 async function loadCountries() {
-  try {
-    const response = await fetch(
-      "https://restcountries.com/v3.1/all?fields=name,flags,capital,region,subregion,population,area,currencies,languages,idd,tld,timezones,borders,maps,startOfWeek,unMember"
-    );
-    const data = await response.json();
+  statusLabel.textContent = "Məlumatlar yüklənir...";
 
-    const preferredExtras = ["Palestine", "Vatican City"];
-    const core = data.filter((country) => country.unMember);
-    const extras = data.filter((country) => preferredExtras.includes(country.name.common));
+  for (const endpoint of ENDPOINTS) {
+    try {
+      const query =
+        endpoint.includes("restcountries.com")
+          ? `${endpoint}?fields=name,flags,capital,region,subregion,population,area,currencies,languages,idd,tld,timezones,borders,maps,startOfWeek,unMember`
+          : endpoint;
+      const data = await fetchWithTimeout(query);
+      countries = normalizeData(data);
+      if (!countries.length) throw new Error("Boş nəticə");
 
-    countries = [...core, ...extras]
-      .filter(
-        (country, idx, arr) =>
-          arr.findIndex((x) => x.name.common === country.name.common) === idx
-      )
-      .sort((a, b) => a.name.common.localeCompare(b.name.common));
-
-    renderResults(countries);
-  } catch (error) {
-    resultsList.innerHTML = "<li>Məlumat yüklənmədi. İnternet bağlantısını yoxlayın.</li>";
+      renderResults(countries);
+      statusLabel.textContent = `${countries.length} ölkə yükləndi.`;
+      return;
+    } catch (error) {
+      statusLabel.textContent = `Bağlantı alınmadı, alternativ server yoxlanır...`;
+    }
   }
+
+  statusLabel.textContent =
+    "Serverə qoşulma alınmadı. Saytı internetlə açın və yeniləyin (F5).";
+  resultsList.innerHTML = "";
 }
 
 searchInput.addEventListener("input", (event) => {
@@ -118,9 +162,15 @@ searchInput.addEventListener("input", (event) => {
   );
 
   renderResults(filtered);
+  if (filtered[0]) showCountry(filtered[0]);
+});
 
-  const exact = filtered.find((country) => country.name.common.toLowerCase() === query);
-  if (exact) showCountry(exact);
+searchInput.addEventListener("keydown", (event) => {
+  if (event.key !== "Enter") return;
+  const top = countries.find((country) =>
+    country.name.common.toLowerCase().includes(searchInput.value.trim().toLowerCase())
+  );
+  if (top) showCountry(top);
 });
 
 loadCountries();
